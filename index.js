@@ -4,7 +4,7 @@ let canva1 = document.getElementById('canva1');
         let canva2 = document.getElementById('canva2');
         context2 = context(canva2);
 
-        context1.fillStyle = 'pink'
+        context1.fillStyle = 'mistyrose'
         context1.fillRect(80, 80, 400, 400); 
         // fillRect leva 4 parametros: X, Y, WIDTH and HEIGHT
 
@@ -33,7 +33,7 @@ let canva1 = document.getElementById('canva1');
                 context2.beginPath();
                 context2.rect(x, y, width, height);    
                 if((i % 2 == 0 & j%2==0) | (i % 2 != 0 & j%2!=0)){
-                    context2.fillStyle = 'pink'
+                    context2.fillStyle = 'mistyrose'
                     context2.fillRect(x, y, width, height); 
 
                     context2.beginPath();
