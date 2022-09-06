@@ -18,18 +18,22 @@ let canva1 = document.getElementById('canva1');
         context1.arc(190, 150, 100, 0, Math.PI * 2); // Parametros: X, Y, Radius, Angulo inicial, Algulo final (em radianos)
         context1.stroke();
 
-        let module = 50;
         for(let i = 0; i < 6; i++){ 
+            let width = 50;
+            let height = 50;
+            let gap = 30;
+            let x = 100 + (width + gap) * i;
+            let y = 100;
+            
+            
             context2.beginPath();
-            context2.rect(module, 100, 50, 50);    
-            let firstNum = module.toString().split("");
-            if(firstNum[0] % 2 == 0){
-                context2.fillStyle = 'pink'
-                context2.fillRect(module, 100, 50, 50); 
-            } else if( i != 0 & firstNum[0] % 2 != 0 ){
-                context2.stroke();
+            context2.rect(x, y, width, height);    
+             if(i % 2 == 0){
+                 context2.fillStyle = 'pink'
+                 context2.fillRect(x, y, width, height); 
+             } else if( i != 0 & i % 2 != 0 ){
+                 context2.stroke();
                  
             }
-            module += 100;
         }
         
