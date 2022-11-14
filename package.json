@@ -1,0 +1,24 @@
+{
+  "name": "creativeprogramming",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sketch-02.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GioMoreira/CreativeProgramming.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GioMoreira/CreativeProgramming/issues"
+  },
+  "homepage": "https://github.com/GioMoreira/CreativeProgramming#readme",
+  "dependencies": {
+    "canvas-sketch": "^0.7.6",
+    "canvas-sketch-util": "^1.10.0"
+  }
+}
