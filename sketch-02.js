@@ -4,6 +4,7 @@ const random = require('canvas-sketch-util/random')
 
 const settings = {
   dimensions: [ 1080 , 1080 ]
+  
 };
 
 // const randomRange = (min, max) => {
@@ -75,3 +76,4 @@ const sketch = () => {
 };
 
 canvasSketch(sketch, settings);
+

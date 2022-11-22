@@ -51,7 +51,7 @@ const sketch = ({ context, width, height }) => {
     agents.forEach(agent => {
       agent.update();
       agent.draw(context);
-      agent.bounce(width, height);
+      agent.wrap(width, height);
     })
   };
 };
@@ -77,11 +77,20 @@ class Agent {
     this.pos = new Vector(x,y);
     this.vel = new Vector(random.range(-1, 1), random.range(-1, 1));
     this.radius = random.range(4, 12);
+    this.isWrapped = false;
   }
 
   bounce(width, height) {
     if(this.pos.x <= 0 || this.pos.x >= width) this.vel.x *= -1;
     if(this.pos.y <= 0 || this.pos.y >= height) this.vel.y *= -1;
+  }
+
+  wrap(width, height) {
+    if(this.pos.x < 0) this.pos.x = width;
+    if(this.pos > width) this.pos.x = 0;
+    if(this.pos.y <0) this.pos.y = height;
+    if(this.pos.y > height) this.pos.y = 0;
+    
   }
 
   update() {
@@ -90,16 +99,17 @@ class Agent {
   }
 
   draw(context) {
-    context.fillStyle = 'white';
 
     context.save();
     context.translate(this.pos.x, this.pos.y);
+
     context.lineWidth = 3;
 
     context.beginPath();
     context.arc(0, 0, this.radius, 0, Math.PI*2);
     context.fill();
     context.strokeStyle = 'steelBlue';
+
     context.stroke();
 
     context.restore();
